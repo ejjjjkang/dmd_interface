@@ -3,8 +3,6 @@ int x,y=0;
 int x1,y1=30;
 int state,state1 = 0;
 
-
-
 void setup() {
   size(500, 500);
 }
@@ -58,7 +56,7 @@ void rectA(){
 void rectB(){
      switch(state1) {
   case 0:
-    x1 = x1+1;
+    x1 = x1+10;
     //println("Zero");
     if (x1 == width-50) {
       state1 = 1; 
@@ -66,20 +64,20 @@ void rectB(){
     }
     break;
   case 1:
-    y1 = y1+1;
+    y1 = y1+10;
     if (y1 == height-50) {
       state1 =2;
     }
     break;
 
   case 2:
-    x1 = x1-1;
+    x1 = x1-10;
     if (x1 == 30) {
       state1 = 3;
     }
     break;
   case 3:
-    y1 = y1-1;
+    y1 = y1-10;
     if (y1 == 30) {
       state1 = 0;
     }

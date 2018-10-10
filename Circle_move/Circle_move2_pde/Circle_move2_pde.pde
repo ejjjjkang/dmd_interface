@@ -61,6 +61,6 @@ void draw() {
     }
     if (arrayX[i] >= width || arrayX[i] < 0) {
       speedX[i] = speedX[i] * (-1);
-    }
+    }  
   }
 }
