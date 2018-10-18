@@ -1,6 +1,4 @@
 
-
-
 class Particle{
   
   PVector location;
@@ -26,14 +24,21 @@ class Particle{
     velocity.add(acceleration);
     location.add(velocity);
     
-    lifespan -=2.0;
+    //lifespan -=2.0;
   }
   
   void display(){
-   stroke(0);
-   fill(175);
+   stroke(0, lifespan);
+   fill(175, lifespan);
    ellipse(location.x, location.y, 8,8);
   }
   
+  boolean isDead(){
+   if(lifespan<0.0){
+    return true; 
+   } else {
+    return false; 
+   }
+  }
   
 }
