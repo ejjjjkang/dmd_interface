@@ -4,8 +4,8 @@
 import java.util.*;
 
 Particle p;
-ArrayList<Particle> plist;
 
+ArrayList<Particle> plist;
 
 void setup(){
  
@@ -27,7 +27,7 @@ void draw(){
   for(int i = plist.size()-1; i>=0; i--){ //<>//
    p = plist.get(i);
     //<>//
-   println(plist.size());
+   
    
    //if(p.bye() == true){
    // plist.remove(i); 
