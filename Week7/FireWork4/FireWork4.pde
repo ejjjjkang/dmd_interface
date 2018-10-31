@@ -1,37 +1,35 @@
-//많은 수의 Particle 객체를 관리하고 싶을 땐 Arraylist
+//많은 수의 Particle 객체를 관리하고 싶을 땐 Arraylist //<>// //<>//
 //Firework
 
 import java.util.*;
 
 Particle p;
-
 ArrayList<Particle> plist;
 
-void setup(){
- 
-  //size(600,800);
-  fullScreen();
-  //p = new Particle(new PVector(width/2,40));
+void setup() {
+
+  size(800, 600);
+
   plist = new ArrayList<Particle>();
-  
-  for(int i=0; i<10; i++){
-    plist.add(new Particle(new PVector(random(width),height)));
+
+  for (int i=0; i<10; i++) {
+    plist.add(new Particle(new PVector(random(width), height)));
   }
 }
 
-void draw(){
+void draw() {
   background(51);
-  for(Particle p : plist){
-   p.run(); 
+  noStroke();
+
+  //for(Particle p : plist){
+
+  //}
+
+  for (int i = plist.size()-1; i>=0; i--) {
+    Particle p = plist.get(i);
+    p.run(); 
+    if (p.bye() == true) {
+      plist.remove(i);
+    }
   }
-  for(int i = plist.size()-1; i>=0; i--){ //<>//
-   p = plist.get(i);
-    //<>//
-   
-   
-   //if(p.bye() == true){
-   // plist.remove(i); 
-   //}
-  }
-  
 }

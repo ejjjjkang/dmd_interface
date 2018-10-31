@@ -6,15 +6,16 @@ class Particle {
   Firepop fp;
   ArrayList<Firepop> fps;
   
-  //float lifespan =2;
+  float lifespan =2;
   PVector location;
   PVector acceleration;
   PVector velocity;
+  
   boolean bye = false;
   boolean flag = true;
   
   Particle(PVector l) {
-  frameRate(120);
+  
     location = l.get();
     acceleration = new PVector(0, 0.05);
     velocity = new PVector(0,random(-10,-4));
@@ -29,7 +30,7 @@ class Particle {
 
   void display() {
    if(flag == true){
-     ellipse(location.x, location.y, 8, 8);
+     ellipse(location.x, location.y, 7, 7);
    }
   }
 
@@ -59,16 +60,16 @@ class Particle {
   }
 
   //remove Particle
-  //Boolean bye() {
+  Boolean bye() {
 
-  //  if (lifespan < 0.0) {
-  //    bye = true;
-  //  } else {
-  //    bye = false;
-  //  }
+    if (lifespan < 0.0) {
+      bye = true;
+    } else {
+      bye = false;
+    }
 
-  //  return bye;
-  //}
+    return bye;
+  }
   
   void pop(float x, float y, float vx, float vy){
     
